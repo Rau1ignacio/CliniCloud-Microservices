@@ -132,6 +132,18 @@ public class DiagnosticoController {
         return ResponseEntity.noContent().build();
     }
 
+    // Metodo DeleteMapping para eliminar todos los diagnósticos de un RUN específico
+    @PostMapping("/eliminarPorRun/{run}") // Url: http://localhost:8080/api/v1/diagnosticos/eliminarPorRun/
+    public ResponseEntity<Void> eliminarPorRun(@PathVariable String run) {
+        // Busca el diagnóstico por RUN
+        Diagnostico diagnosticoExistente = diagnosticoServices.buscarPorRun(run);
+        if (diagnosticoExistente == null) {
+            return ResponseEntity.notFound().build();
+        }
+        // Elimina el diagnóstico
+        diagnosticoServices.delete(diagnosticoExistente.getId());
+        return ResponseEntity.noContent().build();
+    }
 
 
 }
