@@ -1,0 +1,76 @@
+[ Abrir Terminal ]
+
+[Pegar el link de ejemplo de AWS en el apartado
+- Conectarse
+-- Cliente SSH
+--- LINK: ]
+
+	ssh -i "Clave_CliniCloud.pem" ubuntu@ec2-18-212-183-231.compute-1.amazonaws.com
+		--> Conecta al servidor EC2 de AWS usando la clave privada Clave_CliniCloud.pem
+		--> El usuario "ubuntu" es el predeterminado en las instancias de Ubuntu en AWS
+
+[ En el caso que te haga problemas de permisos para ejecutar, pegar este comando en PowerShell como Administrador ]
+
+	$path = "C:\Users\raul_\Desktop\Universidad\3.- Tercer Semestre 2025\2.- Desarrollo FULLSTACK I\EXP 2 - 30%	\Cosas de clinicloud\Paso a paso AWS - Docker\Clave_CliniCloud.pem"
+
+	# Quitar herencia (desactiva los permisos heredados del archivo)
+	icacls "$path" /inheritance:r
+
+	# Quitar todos los permisos existentes (excepto los tuyos)
+	icacls "$path" /remove "BUILTIN\Usuarios" "NT AUTHORITY\SYSTEM" "BUILTIN\Administradores" "Todos" "Users"
+
+	# Dar solo permiso de lectura al usuario actual
+	icacls "$path" /grant:r "$($env:USERNAME):(R)"
+
+[ Después, de nuevo el comando de conexión a la instancia AWS ]
+
+	ssh -i "Clave_CliniCloud.pem" ubuntu@ec2-18-212-183-231.compute-1.amazonaws.com
+		--> Ya con los permisos corregidos, ahora sí deberías poder acceder correctamente
+
+[ Instalar Docker en la instancia (solo la primera vez) ]
+
+	sudo snap install docker
+		--> Instala Docker en Ubuntu usando Snap
+
+[ Ejecutar contenedor MySQL en Docker ]
+
+	sudo docker run -d --name mysql-db -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 mysql:latest
+		--> Crea y ejecuta un contenedor MySQL
+		--> Contraseña del usuario root = "root"
+		--> Expone el puerto 3306 (por donde se conecta MySQL)
+
+[ Verificar que el contenedor está activo ]
+
+	sudo docker ps
+		--> Muestra los contenedores activos
+		--> Deberías ver uno llamado mysql-db corriendo
+
+[ Ingresar a MySQL desde el contenedor ]
+
+	sudo docker exec -it mysql-db mysql -u root -p
+		--> Te pedirá la contraseña: escribir "root"
+
+[ Una vez dentro de MySQL: ejecutar los siguientes comandos ]
+
+	show databases;
+		--> Muestra todas las bases de datos existentes
+
+	CREATE USER 'admin'@'%' IDENTIFIED BY 'adminpass';
+		--> Crea un nuevo usuario llamado admin con contraseña adminpass
+		--> El símbolo '%' permite conexión desde cualquier IP
+
+	GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
+		--> Le da todos los permisos al usuario admin
+
+	FLUSH PRIVILEGES;
+		--> Aplica los cambios de permisos inmediatamente
+
+[ Ahora abrir app MySQL (Workbench, DBeaver, etc) e ingresar con:
+	Usuario: admin
+	Contraseña: adminpass
+	Host: ec2-18-212-183-231.compute-1.amazonaws.com
+	Puerto: 3306
+]
+
+[ Seguir con el tutorial de YouTube
+link: https://www.youtube.com/watch?v=jU3eSilJ8jo]
