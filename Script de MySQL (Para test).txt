@@ -1,0 +1,17 @@
+USE db_diagnostico_cl;
+-- TRUNCATE TABLE diagnosticos;
+
+INSERT INTO diagnosticos (
+    run, fecha, correo, nombre, descripcion, sintomas, medicamentos,
+    recomendaciones, observaciones, estado, tipo
+) VALUES
+('12345678-9', '2025-05-01', 'juan.perez@example.com', 'Juan Pérez', 'Diagnóstico por dolor abdominal persistente.', 'Dolor abdominal, náuseas', 'Paracetamol, Omeprazol', 'Reposo por 3 días, dieta blanda', 'Paciente estable, sin fiebre', 'Completo', 'Consulta'),
+('87654321-0', '2025-05-02', 'maria.lopez@example.com', 'María López', 'Revisión por hipertensión arterial.', 'Dolor de cabeza, mareos', 'Losartán 50mg', 'Control en una semana', 'Presión levemente elevada', 'En Progreso', 'Seguimiento'),
+('11223344-5', '2025-05-03', 'carlos.soto@example.com', 'Carlos Soto', 'Consulta por alergia estacional.', 'Estornudos, picazón', 'Loratadina', 'Evitar exposición a polvo', 'Sin complicaciones', 'Completo', 'Consulta'),
+('99887766-5', '2025-05-04', 'ana.rivera@example.com', 'Ana Rivera', 'Urgencia por crisis asmática.', 'Dificultad respiratoria, tos', 'Salbutamol inhalador', 'Uso regular de inhalador', 'Observada 4 horas en urgencia', 'Completo', 'Urgencia'),
+('55667788-3', '2025-05-05', 'pedro.munoz@example.com', 'Pedro Muñoz', 'Consulta por fiebre y dolor de garganta.', 'Fiebre, dolor de garganta', 'Ibuprofeno', 'Líquidos, descanso', 'Posible faringitis viral', 'Pendiente', 'Consulta'),
+('33445566-1', '2025-05-06', 'sofia.valdes@example.com', 'Sofía Valdés', 'Seguimiento de cirugía menor.', 'Dolor leve post-operatorio', 'Paracetamol', 'No levantar peso', 'Herida sin signos de infección', 'En Progreso', 'Seguimiento'),
+('77889900-2', '2025-05-07', 'jorge.fernandez@example.com', 'Jorge Fernández', 'Consulta por control de diabetes.', 'Sed, visión borrosa', 'Metformina', 'Dieta baja en azúcares', 'Glicemia controlada', 'Completo', 'Consulta'),
+('44556677-4', '2025-05-08', 'carla.sandoval@example.com', 'Carla Sandoval', 'Urgencia por accidente doméstico.', 'Corte en brazo', 'Curación tópica', 'Mantener herida limpia', 'No se necesitaron puntos', 'Completo', 'Urgencia'),
+('66778899-6', '2025-05-09', 'andres.vera@example.com', 'Andrés Vera', 'Control post covid-19.', 'Cansancio, tos residual', 'Vitaminas, reposo', 'Ejercicio leve', 'Paciente recuperado parcialmente', 'En Progreso', 'Seguimiento'),
+('10111213-7', '2025-05-10', 'laura.gomez@example.com', 'Laura Gómez', 'Diagnóstico por infección urinaria.', 'Dolor al orinar, fiebre', 'Antibióticos', 'Tomar líquidos, completar tratamiento', 'Muestra de orina en análisis', 'Pendiente', 'Consulta');
