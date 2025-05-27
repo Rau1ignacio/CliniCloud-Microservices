@@ -1,0 +1,14 @@
+ssh -i "Clave_CliniCloud.pem" ubuntu@ec2-54-227-216-173.compute-1.amazonaws.com
+yes
+sudo docker ps -a
+	sudo docker logs mysql-db (para verificar los errores, ver los logs)
+
+sudo docker start mysql-db
+sudo docker exec -it mysql-db mysql -u root -p
+root
+
+show databases;
+use db_diagnostico_cl
+show tables;
+select * from diagnosticos;
+

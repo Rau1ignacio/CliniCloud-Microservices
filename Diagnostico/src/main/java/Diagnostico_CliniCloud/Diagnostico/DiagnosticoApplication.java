@@ -11,7 +11,6 @@ public class DiagnosticoApplication {
 		System.out.println("\n===========================================");
 		System.out.println("     Diagnostico CliniCloud Iniciado!   ");
 		System.out.println("===========================================\n");
-		System.out.println("Accede a la aplicación en: http://localhost:8080");
 	}
 
 }

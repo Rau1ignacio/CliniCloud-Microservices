@@ -53,7 +53,7 @@ public class Diagnostico {
     private String observaciones;       // Observaciones adicionales del médico
     
     @Column(nullable = false)
-    private String estado;              // Estado del diagnóstico (ej. "Pendiente", "Completo", "En Progreso")
+    private String estado;              // Estado del diagnóstico (ej. "Pendiente", "En Progreso", "Completo")
     
     @Column(nullable = false)
     private String tipo;                // Tipo de diagnóstico (ej. "Consulta", "Urgencia", "Seguimiento")

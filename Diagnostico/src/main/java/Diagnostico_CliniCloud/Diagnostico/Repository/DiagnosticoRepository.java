@@ -22,5 +22,4 @@ public interface DiagnosticoRepository extends JpaRepository<Diagnostico, Intege
     @Query("SELECT d FROM Diagnostico d WHERE d.nombre = ?1")
     Diagnostico buscarPorNombre(@Param("nombre") String nombre);
     
-
 }
