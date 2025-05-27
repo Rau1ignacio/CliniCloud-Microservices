@@ -2,10 +2,10 @@ package com.AgendarCitasMedicas.AgendarCitasMedicas.repository;
 
 import com.AgendarCitasMedicas.AgendarCitasMedicas.model.CitasMedica;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 //CRUD (Create, Read, Update, Delete):
 //o save(S entity): Guarda una entidad.
@@ -22,5 +22,5 @@ import java.util.List;
 @Repository
 public interface CitasRepository extends JpaRepository<CitasMedica, Integer> {
 
-    CitasMedica findByRut(String rut);
+    Optional<CitasMedica> findByRut(String rut);
 }

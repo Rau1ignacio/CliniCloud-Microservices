@@ -1,5 +1,6 @@
 package com.AgendarCitasMedicas.AgendarCitasMedicas.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -18,7 +19,7 @@ public class CitasMedica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_cita;
 
-    @Column(unique = true,length = 13, nullable = false)
+    @Column(unique = true,length = 9, nullable = false)
     private String rut;
 
     @Column(nullable = false)
@@ -39,6 +40,7 @@ public class CitasMedica {
     @Column(nullable = false)
     private String  especialidad_medico;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     @Column(nullable = false)
     private LocalDateTime fecha_hora_cita;
 

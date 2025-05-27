@@ -6,6 +6,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -26,20 +27,35 @@ public class CitasService {
                 .orElseThrow(() -> new RuntimeException("No se encontró la cita con id: " + id_cita));
     }
 
-    public CitasMedica findByRut(String rut) {
+    public Optional<CitasMedica> buscarPorRut(String rut) {
         return citasRepository.findByRut(rut);
-                new RuntimeException("No se pudo encontrar la cita por rut: " + rut);
-    };
+    }
 
     public CitasMedica guardarCita(CitasMedica cita) {
         return citasRepository.save(cita);
     }
 
     public void eliminarCita(Integer id_cita) {
+        if (!citasRepository.existsById(id_cita)) {
+            throw new RuntimeException("Cita no encontrada con id: " + id_cita);
+        }
         citasRepository.deleteById(id_cita);
     }
 
-    public CitasMedica actualizarCita(CitasMedica cita) {
-        return citasRepository.save(cita); // save actúa como update si el id ya existe
+    public CitasMedica actualizarCita(Integer id, CitasMedica datosActualizados) {
+        CitasMedica citaExistente = buscarCitaPorId(id);
+
+        citaExistente.setRut(datosActualizados.getRut());
+        citaExistente.setNombre_paciente(datosActualizados.getNombre_paciente());
+        citaExistente.setApellido_paciente(datosActualizados.getApellido_paciente());
+        citaExistente.setCorreo_paciente(datosActualizados.getCorreo_paciente());
+        citaExistente.setTelefono(datosActualizados.getTelefono());
+        citaExistente.setNombre_medico(datosActualizados.getNombre_medico());
+        citaExistente.setEspecialidad_medico(datosActualizados.getEspecialidad_medico());
+        citaExistente.setFecha_hora_cita(datosActualizados.getFecha_hora_cita());
+        citaExistente.setDescripcion(datosActualizados.getDescripcion());
+
+        return citasRepository.save(citaExistente);
     }
+
 }
