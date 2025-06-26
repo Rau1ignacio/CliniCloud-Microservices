@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DiagnosticoApplication<Diagnostico>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "Diagnostico_CliniCloud.Diagnostico.DiagnosticoApplication",
+            "projectName": "Diagnostico",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

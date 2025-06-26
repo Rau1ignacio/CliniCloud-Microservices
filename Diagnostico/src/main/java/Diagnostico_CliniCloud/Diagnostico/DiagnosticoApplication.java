@@ -9,8 +9,7 @@ public class DiagnosticoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DiagnosticoApplication.class, args);
 		System.out.println("\n===========================================");
-		System.out.println("     Diagnostico CliniCloud Iniciado!   ");
+		System.out.println("     Diagnostico CliniCloud Iniciado   ");
 		System.out.println("===========================================\n");
 	}
-
 }

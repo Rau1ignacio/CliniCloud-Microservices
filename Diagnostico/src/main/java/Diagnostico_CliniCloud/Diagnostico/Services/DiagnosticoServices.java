@@ -1,12 +1,9 @@
 package Diagnostico_CliniCloud.Diagnostico.Services;
 
 import jakarta.transaction.Transactional;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import Diagnostico_CliniCloud.Diagnostico.Model.Diagnostico;
 import Diagnostico_CliniCloud.Diagnostico.Repository.DiagnosticoRepository;
 
@@ -16,33 +13,29 @@ public class DiagnosticoServices {
 
     @Autowired
     private DiagnosticoRepository diagnosticoRepository;
-    // Aquí puedes agregar métodos para interactuar con el repositorio
 
-
-    // Metodo para listar todos los diagnosticos
+    // Lista todos los diagnósticos en la base de datos
     public List<Diagnostico> listarDiagnosticos() {
         return diagnosticoRepository.findAll();
     }
 
-    // Metodo para buscar un diagnostico por RUN
+    // Busca un diagnóstico por el RUN del paciente
     public Diagnostico buscarPorRun(String run) {
         return diagnosticoRepository.buscarPorRun(run);
     }
 
-    // Metodo para buscar por ID
+    // Busca un diagnóstico por su ID único
     public Diagnostico buscarPorId(int id) {
         return diagnosticoRepository.findById(id).get();
     }
 
-    // Metodo para guardar o actualizar un nuevo diagnóstico
+    // Guarda un nuevo diagnóstico o actualiza uno existente
     public Diagnostico save(Diagnostico diagnostico) {
         return diagnosticoRepository.save(diagnostico);
     }
 
-    // Método para eliminar un diagnóstico por su ID
+    // Elimina un diagnóstico por su ID
     public void delete(int id) {
         diagnosticoRepository.deleteById(id);
     }
-
-
 }
