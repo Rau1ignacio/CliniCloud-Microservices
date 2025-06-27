@@ -10,9 +10,15 @@ import io.swagger.v3.oas.models.info.Info;
 public class SwaggerConfig {
 
     @Bean
+
+    /*
+     * Configuración de Swagger para la API de Diagnóstico
+     * Este método define la información básica de la API, como el título, la versión y la descripción.
+     */
+
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
-                .info(new Info()
+                .info(new Info()// Creo la info para la API
                         .title("CliniCloud Diagnostico API")
                         .version("1.0")
                         .description("Documentacion de la API para gestionar diagnósticos en CliniCloud"));

@@ -21,6 +21,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/api/v2/diagnosticos")
 @Tag(name = "Diagnostico", description = "Controlador para gestionar diagnósticos en CliniCloud")
+
+/*
+ * Este controlador se hizo para manejar la API HATEOAS de Diagnóstico
+ * utilizando Spring HATEOAS y Swagger para la documentación de la API.
+ */
+
 public class DiagnosticoControllerV2 {
 
     @Autowired
