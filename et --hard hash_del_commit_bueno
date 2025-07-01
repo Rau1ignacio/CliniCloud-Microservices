@@ -1,0 +1,25 @@
+[33m9493cdf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Reestructura: todo el microservicio dentro de la carpeta AgendarCitasMedicas
+[33m47f3c90[m Initial commit: upload microservice project
+[33m4b05576[m Se solucionarion todos los problemas que tenia de principio
+[33m2a6a228[m Merge branch 'main' of https://github.com/Rau1ignacio/CliniCloud-Microservices into HEAD
+[33ma560d8e[m Subida inicial del microservicio AgendarCitasMedicas
+[33m00f809a[m MicroServicio de GestionUsuarios
+[33mb0cd90b[m Delete Usuarios/Usuarios directory
+[33ma3d7710[m Comentarios
+[33mc95c231[m Versión inicial Diagnostico CliniCloud
+[33m1abcf8a[m Actualización del microservicio Diagnóstico: endpoints, servicios, repositorios y configuración
+[33m8ad397d[m Add files via upload
+[33m7305348[m chore: agregar carpeta .vscode dentro de Diagnostico
+[33m898127e[m chore: mover carpeta .vscode dentro de Diagnostico para mejor organización
+[33m3c9feb3[m refactor: mover todos los archivos y carpetas a la carpeta Diagnostico para mejor organización del repositorio
+[33mbd965a4[m fix: resolver conflicto de Script de MySQL (Para test).txt
+[33m3fd8216[m chore: actualización completa del microservicio Diagnostico y archivos relacionados
+[33m1172c9e[m Add files via upload
+[33m796316a[m Add files via upload
+[33m7023921[m Add files via upload
+[33mc3e4769[m Merge branch 'main' of https://github.com/Rau1ignacio/CliniCloud-Microservices
+[33mad25e8d[m actualizar DiagnosticoController con integracion de eliminar diagnosticos completos por RUN
+[33ma2dc399[m Delete Diagnostico_Y_Recetas directory
+[33m53706b5[m feat: agregar microservicio Diagnostico con estructura base, controladores, modelos, repositorios y servicios
+[33m57051db[m Agregar microservicio de diagnóstico y recetas
+[33m98ec43e[m Initial commit
