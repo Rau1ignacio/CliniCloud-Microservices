@@ -2,7 +2,6 @@ package com.AgendarCitasMedicas.AgendarCitasMedicas.repository;
 
 import com.AgendarCitasMedicas.AgendarCitasMedicas.model.CitasMedica;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

@@ -19,7 +19,7 @@ public class CitasMedica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_cita;
 
-    @Column(unique = true,length = 9, nullable = false)
+    @Column(unique = true,length = 12, nullable = false)
     private String rut;
 
     @Column(nullable = false)
@@ -31,8 +31,8 @@ public class CitasMedica {
     @Column(length = 255,nullable = false)
     private String correo_paciente;
 
-    @Column(length = 9, nullable = false)
-    private Integer telefono;
+    @Column(length = 15, nullable = false)
+    private String telefono;
 
     @Column(nullable= false)
     private String nombre_medico;
@@ -46,4 +46,5 @@ public class CitasMedica {
 
     @Column(length = 255, nullable = false)
     private String descripcion;
+
 }

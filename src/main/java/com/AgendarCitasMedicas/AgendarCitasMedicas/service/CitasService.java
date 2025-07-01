@@ -27,8 +27,8 @@ public class CitasService {
                 .orElseThrow(() -> new RuntimeException("No se encontró la cita con id: " + id_cita));
     }
 
-    public Optional<CitasMedica> buscarPorRut(String rut) {
-        return citasRepository.findByRut(rut);
+    public CitasMedica buscarPorRut(String rut) {
+        return citasRepository.findByRut(rut).orElse(null);
     }
 
     public CitasMedica guardarCita(CitasMedica cita) {

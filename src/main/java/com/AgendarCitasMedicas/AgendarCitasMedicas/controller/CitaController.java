@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/citas")
@@ -43,11 +43,16 @@ public class CitaController {
 
     @GetMapping("/{rut}")
     public ResponseEntity<CitasMedica> buscarPorRut(@PathVariable String rut) {
-        Optional<CitasMedica> cita = citasService.buscarPorRut(rut);
-        return cita.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        CitasMedica cita = citasService.buscarPorRut(rut);
+
+        if (cita != null) {
+            return ResponseEntity.ok(cita);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
-    @PostMapping
+    @PostMapping("/{añadir_cita}")
     public ResponseEntity<CitasMedica> crear(@RequestBody CitasMedica nuevaCita) {
         CitasMedica citaGuardada = citasService.guardarCita(nuevaCita);
         return ResponseEntity.status(HttpStatus.CREATED).body(citaGuardada);
